@@ -56,8 +56,10 @@
             <input type="radio" asp-for="Categoria" value="Sub20" /> Sub 20
             <input type="radio" asp-for="Categoria" value="Mayores" /> Mayores
         </div>
-
-
+        <div class="form-group">
+            <label asp-for="Faltas">¿Ha tenido faltas?</label>
+            <input type="checkbox" asp-for="Faltas"><br>
+        </div>
         <div>
             <button type="submit" class="btn btn-primary">Guardar</button>
         </div>

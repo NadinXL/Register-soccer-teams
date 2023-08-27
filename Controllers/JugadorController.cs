@@ -26,7 +26,16 @@ namespace PC1_Teoria.Controllers
         [HttpPost]
         public IActionResult Registrar(Jugador objJugador)
         {
-            string respuesta;
+            string respuesta,faltasRespuesta;
+            bool faltas;
+
+            faltas = objJugador.Faltas;
+
+            if(faltas==true){
+                faltasRespuesta= "SI";
+            }else{
+                faltasRespuesta="NO";
+            }
 
             try
             {
@@ -36,7 +45,7 @@ namespace PC1_Teoria.Controllers
             {
                 respuesta = ex.Message;
             }
-            ViewData["Message"] = "Datos del Jugador: Equipo: " +objJugador.Equipo + "\nNombre: " + objJugador.Nombre + "\nEdad: "+ objJugador.Edad +"\nGénero: " + objJugador.Genero + "\nCategoría: "+objJugador.Categoria +"\nMonto total a pagar: " + respuesta;
+            ViewData["Message"] = "Datos del Jugador: Equipo: " +objJugador.Equipo + "\nNombre: " + objJugador.Nombre + "\nEdad: "+ objJugador.Edad +"\nGénero: " + objJugador.Genero + "\nCategoría: "+objJugador.Categoria +"\n¿Ha tenido faltas?: "+ faltasRespuesta+ "\nMonto total a pagar: " + respuesta;
             return View("Index");
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

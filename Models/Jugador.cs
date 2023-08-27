@@ -13,6 +13,8 @@ namespace PC1_Teoria.Models
         public string? Edad {get;set;}
         public string? Genero {get;set;}
         public string? Categoria {get;set;}
+
+        public bool Faltas { get; set; }
         
 
         public double CalcularCostoTotal()
