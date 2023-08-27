@@ -1,0 +1,69 @@
+@model Jugador
+
+@{
+    ViewData["Tittle"] = "Registro de Jugadores de Futbol Peruano";
+}
+
+<h1>@ViewData["Tittle"]</h1>
+
+<div class="text-center">
+
+
+    <form asp-controller="Jugador" asp-action="Registrar">
+        <div class="form-group">
+            <label asp-for="Equipo">Equipo:</label>
+            <select asp-for="Equipo" class="form-control">
+                <option value="U">Universitario</option>
+                <option value="Alianza">Alianza Lima</option>
+                <option value="Cristal">Sporting Cristal</option>
+                <option value="Cienciano">Cienciano</option>
+                <option value="Cantolao">Cantolao</option>
+                <option value="USMP">USMP</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Temporadas">Temporadas:</label>
+            <select asp-for="Temporadas" class="form-control">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Nombre">Nombre:</label>
+            <input asp-for="Nombre" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Edad">Edad:</label>
+            <input asp-for="Edad" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Genero">Género:</label>
+            <select asp-for="Genero" class="form-control">
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Categoria">Categoría:</label><br>
+            <input type="radio" asp-for="Categoria" value="Sub17" /> Sub 17
+            <input type="radio" asp-for="Categoria" value="Sub20" /> Sub 20
+            <input type="radio" asp-for="Categoria" value="Mayores" /> Mayores
+        </div>
+
+
+        <div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+    </form>
+    <h1>@ViewData["Message"]</h1>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>

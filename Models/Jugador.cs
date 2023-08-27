@@ -11,9 +11,9 @@ namespace PC1_Teoria.Models
         public int Temporadas {get;set;}
         public string? Nombre {get;set;}
         public string? Edad {get;set;}
+        public string? Genero {get;set;}
         public string? Categoria {get;set;}
         
-        public string? Genero {get;set;}
 
         public double CalcularCostoTotal()
         {
