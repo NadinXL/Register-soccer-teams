@@ -23,6 +23,22 @@ namespace PC1_Teoria.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Registrar(Jugador objJugador)
+        {
+            string respuesta;
+
+            try
+            {
+                respuesta = objJugador.CalcularCostoTotal().ToString();
+            }
+            catch (Exception ex)
+            {
+                respuesta = ex.Message;
+            }
+            ViewData["Message"] = "Datos del Jugador: Equipo: " +objJugador.Equipo + "\nNombre: " + objJugador.Nombre + "\nEdad: "+ objJugador.Edad +"\nGénero: " + objJugador.Genero + "\nCategoría: "+objJugador.Categoria +"\nMonto total a pagar: " + respuesta;
+            return View("Index");
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
